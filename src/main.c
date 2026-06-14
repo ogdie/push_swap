@@ -55,7 +55,7 @@ int	main(int argc, char **argv)
 	t_ctx	ctx;
 	int		ret;
 
-	if (argc == 1 || (argc == 2 && is_blank(argv[1])))
+	if (argc == 1 || (argc == 2 && argv[1][0] != '\0' && is_blank(argv[1])))
 		return (0);
 	ret = setup_ctx(argc, argv, &ctx);
 	if (ret < 0)

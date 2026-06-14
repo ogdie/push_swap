@@ -112,7 +112,7 @@ int	parse_args(int argc, char **argv, t_ctx *ctx)
 			if (!parse_flag(argv[i], ctx))
 				return (0);
 		}
-		else if (!parse_values_from_arg(argv[i], &ctx->a))
+		else if (argv[i][0] == '\0' || !parse_values_from_arg(argv[i], &ctx->a))
 			return (0);
 	}
 	return (!has_duplicate(&ctx->a));
